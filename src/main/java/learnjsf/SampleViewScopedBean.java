@@ -37,8 +37,15 @@ public class SampleViewScopedBean implements Serializable {
     }
 
     public void getSession() {
+        // if there's no session, no new session is created (false)
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
         // logout or page timeout
         session.invalidate();
+    }
+
+    public boolean isRefreshed() {
+        // context is per page
+        return FacesContext.getCurrentInstance().isPostback();
+        //FacesContext.getCurrentInstance().validationFailed();
     }
 }

@@ -14,6 +14,9 @@
             <h:commandButton value="Say Hello" action="#{welcomePageBean.sayHello}"/>
             <h:outputText value="#{welcomePageBean.completedGreeting}"/>
             <h:commandButton value="Navigate to flashscope" action="#{welcomePageBean.navigateToFlashPage}"/>
+            <h:outputText value="#{welcomePageBean.session}"/>
+            <h:outputText value="#{welcomePageBean.servContext}"/>
+            <h:outputText value="#{welcomePageBean.currentUser}"/>
         </h:panelGrid>
     </h:form>
 </h:body>
